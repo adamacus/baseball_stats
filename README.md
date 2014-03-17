@@ -1,28 +1,14 @@
-== README
+# Baseball Statistics Code Sample
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This coding example calculates some baseball statistics.  It loads statistics from a csv into
+a database that it uses for querying.
 
-Things you may want to cover:
+## Installation
 
-* Ruby version
+* Clone the project
+* Install gems and set up the db (one time)
+    bundle
+    rake db:setup
+* Run the statistics
+    rake baseball:stats
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
