@@ -6,12 +6,20 @@ a database that it uses for querying.
 ## Installation
 
 * Clone the project
-* Install gems and set up the db (one time)
+* Install gems and set up the db
 
-    bundle
-    rake db:setup
+        bundle install
+        bundle exec rake db:setup
 
+## Usage
 * Run the statistics
 
-    rake baseball:stats
+        bundle exec rake baseball:stats
 
+## Tests
+* Prepare test schema
+
+        bundle exec rake db:test:prepare
+
+* Run the tests
+        bundle exec rake spec
