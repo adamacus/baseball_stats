@@ -7,8 +7,11 @@ a database that it uses for querying.
 
 * Clone the project
 * Install gems and set up the db (one time)
+
     bundle
     rake db:setup
+
 * Run the statistics
+
     rake baseball:stats
 
