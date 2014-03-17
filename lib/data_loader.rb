@@ -8,6 +8,9 @@ class DataLoader
 
     ActiveRecord::Base.transaction do
 
+      print '-- Importing player data '
+
+      idx = 0
       CSV.parse(player_data, headers: true) do |row|
         player = Player.create(
           player_id: row['playerID'],
@@ -16,7 +19,12 @@ class DataLoader
           last_name: row['nameLast']
         )
         players[player.player_id] = player
+        print '.' if idx % 1000 == 0
+        idx = idx+  1
       end
+
+      print "done. \n-- Importing batting data "
+      idx = 0
 
       CSV.parse(batting_data, headers: true) do |row|
         BattingStatistic.create(
@@ -31,7 +39,11 @@ class DataLoader
           runs_batted_in: row['RBI'],
           player: players[row['playerID']]
         )
+        print '.' if idx % 1000 == 0
+        idx = idx+1
       end
+
+      puts "done.\n"
     end
 
   end
